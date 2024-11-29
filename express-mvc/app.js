@@ -1,3 +1,4 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -5,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 //load mongodb db connection
 require('./app_server/models/db');
+require("./app_server/configs/passport"); //load file config
 
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
@@ -14,7 +16,7 @@ var housingRouter = require('./app_server/routes/housing');
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'app_server', 'views'));
+app.set('views', path.join(__dirname, 'app_server', 'view'));
 app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
