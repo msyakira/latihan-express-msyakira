@@ -11,7 +11,7 @@ router.get('/paketwisata', function(req, res, next) {
 });
 
 router.get('/orderpaket', function(req, res, next) {
-  res.render('orderpaket', { title: 'Pwmwsanan' });
+  res.render('orderpaket', { title: 'Pemesanan' });
 });
 
 router.post('/orderdetail', function(req, res, next) {
